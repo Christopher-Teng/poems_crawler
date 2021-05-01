@@ -240,6 +240,12 @@ else
 		else
 			echo "\n\n\n爬取数据失败！请输入正确参数，格式：author=[作者名]"
 		fi
+
+		# 清理后台Redis、MongoDB和Mongo-express服务
+
+		echo "\n\n\n清理后台Redis、MongoDB和Mongo-express服务......\n\n\n"
+		docker stop poems_redis poems_mongodb poems_mongo-express
+		docker container rm poems_redis poems_mongodb poems_mongo-express
 	fi
 
 fi
