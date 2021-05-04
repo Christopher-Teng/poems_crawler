@@ -2,7 +2,7 @@
 生成用于RedisBloomDupeFilter的哈希函数
 """
 class HashMap():
-    def __init__(self, m, seed) -> None:
+    def __init__(self, m, seed):
         self.m = m
         self.seed = seed
 
