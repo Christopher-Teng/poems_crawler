@@ -1,7 +1,7 @@
 if [ $# -ne 1 ]
 
 	# 如果没有传入一个参数运行
-	
+
 then
 	echo "请传入一个启动参数，格式为：author=作者名字"
 else
@@ -48,7 +48,7 @@ else
 				   --network host \
 				   --env TZ=Asia/Shanghai \
 				   -v $PWD/redis_data:/data \
-				   -u $(id -u ${USER}):$(id -g ${USER}) redis:6.2
+				   -u $(id -u ${USER}):$(id -g ${USER}) redis:latest
 
 			while [ $? -ne 0 ]
 			do
@@ -60,7 +60,7 @@ else
 					   --network host \
 					   --env TZ=Asia/Shanghai \
 					   -v $PWD/redis_data:/data \
-					   -u $(id -u ${USER}):$(id -g ${USER}) redis:6.2
+					   -u $(id -u ${USER}):$(id -g ${USER}) redis:latest
 			done
 
 			echo "\n\n\n启动Redis服务成功！\n\n\n"
@@ -112,7 +112,7 @@ else
 				   --env MONGO_INITDB_ROOT_USERNAME=root \
 				   --env MONGO_INITDB_ROOT_PASSWORD=123456 \
 				   -v $PWD/mongo_data:/data/db \
-				   -u $(id -u ${USER}):$(id -g ${USER}) mongo:4.4
+				   -u $(id -u ${USER}):$(id -g ${USER}) mongo:latest
 
 			while [ $? -ne 0 ]
 			do
@@ -126,7 +126,7 @@ else
 					   --env MONGO_INITDB_ROOT_USERNAME=root \
 					   --env MONGO_INITDB_ROOT_PASSWORD=123456 \
 					   -v $PWD/mongo_data:/data/db \
-					   -u $(id -u ${USER}):$(id -g ${USER}) mongo:4.4
+					   -u $(id -u ${USER}):$(id -g ${USER}) mongo:latest
 			done
 
 			echo "\n\n\n启动MongoDB服务成功！\n\n\n"
@@ -177,7 +177,7 @@ else
 				   --env ME_CONFIG_MONGODB_SERVER=127.0.0.1 \
 				   --env ME_CONFIG_MONGODB_ADMINUSERNAME=root \
 				   --env ME_CONFIG_MONGODB_ADMINPASSWORD=123456 \
-				   -u $(id -u ${USER}):$(id -g ${USER}) mongo-express:0.54
+				   -u $(id -u ${USER}):$(id -g ${USER}) mongo-express:latest
 
 			while [ $? -ne 0 ]
 			do
@@ -191,7 +191,7 @@ else
 					   --env ME_CONFIG_MONGODB_SERVER=127.0.0.1 \
 					   --env ME_CONFIG_MONGODB_ADMINUSERNAME=root \
 					   --env ME_CONFIG_MONGODB_ADMINPASSWORD=123456 \
-					   -u $(id -u ${USER}):$(id -g ${USER}) mongo-express:0.54
+					   -u $(id -u ${USER}):$(id -g ${USER}) mongo-express:latest
 			done
 
 			echo "\n\n\n启动Mongo-express服务成功！\n\n\n"
